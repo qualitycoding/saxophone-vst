@@ -1,0 +1,22 @@
+{
+  "schema": "saxophone-vst/resonators@1",
+  "instrument": "alto",
+  "units": {"pole": "rad/s", "residue": "Z/Zc"},
+  "provenance": {"note": "FROZEN test fixture. Modes = Colinot et al. 2021 Table 2 (CC BY 4.0), first 4 and all 8."},
+  "entries": [
+    {"written": 63, "hole": "none", "modes": [
+      {"re_s": -17.59, "im_s": 1195, "re_c": 176.1, "im_c": 0},
+      {"re_s": -35.50, "im_s": 2483, "re_c": 470.5, "im_c": 0},
+      {"re_s": -65.30, "im_s": 3727, "re_c": 649.4, "im_c": 0},
+      {"re_s": -269.34, "im_s": 4405, "re_c": 328.7, "im_c": 0}]},
+    {"written": 75, "hole": "body", "modes": [
+      {"re_s": -17.59, "im_s": 1195, "re_c": 176.1, "im_c": 0},
+      {"re_s": -35.50, "im_s": 2483, "re_c": 470.5, "im_c": 0},
+      {"re_s": -65.30, "im_s": 3727, "re_c": 649.4, "im_c": 0},
+      {"re_s": -269.34, "im_s": 4405, "re_c": 328.7, "im_c": 0},
+      {"re_s": -70.32, "im_s": 5153, "re_c": 541.5, "im_c": 0},
+      {"re_s": -166.0, "im_s": 6177, "re_c": 224.9, "im_c": 0},
+      {"re_s": -94.49, "im_s": 6749, "re_c": 382.2, "im_c": 0},
+      {"re_s": -116.5, "im_s": 7987, "re_c": 409.9, "im_c": 0}]}
+  ]
+}
