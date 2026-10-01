@@ -51,7 +51,8 @@ TEST_CASE("T-005 resolveNote: standard vs harmonic (overblown) mode", "[T-005][u
         INFO("concert " << n);
         const auto std_ = resolveNote(n, false);
         const auto harm = resolveNote(n, true);
-        if (!isInRange(n)) { CHECK_FALSE(std_.has_value()); CHECK_FALSE(harm.has_value()); continue; }
+        const bool inRange = n >= 49 && n <= 81; // literal range, independent of isInRange()
+        if (!inRange) { CHECK_FALSE(std_.has_value()); CHECK_FALSE(harm.has_value()); continue; }
         REQUIRE(std_.has_value()); REQUIRE(harm.has_value());
         CHECK(std_->concertMidi == n);
         CHECK(std_->fingering == standardFingering(n + 9));
