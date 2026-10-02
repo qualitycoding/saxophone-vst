@@ -47,4 +47,8 @@ Core-only (fast) configure: add `-DSAX_BUILD_PLUGIN=OFF`.
 - Debug core + tests configure/build: OK (141 targets). Red run: unit 17/17 cases fail, integration 14/14,
   operational 4/4, alloc 1/1 fail; perf skipped in Debug (fails at construction in Release).
 - Python venv install from pins: OK; red run 21 fail / 2 pass (the two D-018 guard tests).
-- Release build with plugin: see `research/spikes/plugin_build.log` summary appended in round log.
+- Release build with plugin (JUCE 9.0.3, LTO): OK at `-j1` (an earlier `-j2` run died, likely memory). Artefacts: `build/plugin/SaxophoneVST_artefacts/Release/VST3/Saxophone.vst3`, `.../Standalone/Saxophone`.
+- Plugin tests under `xvfb-run -a`: 3 cases, 2 fail (red), 1 guard passes (D-018).
+- pluginval 1.0.4 strictness 10 on the stub VST3 under `xvfb-run -a`: SUCCESS; without a display it segfaults. Details: `research/spikes/plugin_build.log`.
+- Release `sax_perf_tests`: fails (red) at voice construction.
+- Low-memory machines: build with `-j1`; LTO link of the plugin takes several minutes.

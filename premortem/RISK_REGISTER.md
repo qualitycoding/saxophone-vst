@@ -8,7 +8,7 @@
 | R-004 | Realism thresholds arbitrary (A-012) | medium | medium | Thresholds frozen and justified; G-003 is final arbiter; failing metrics still go to G-003 | — | yes |
 | R-005 | Numerical instability (explicit coupling) | medium | high | Oversampling ≥ 176.4 kHz (C-008); T-014 abuse test; state reset rule | — | yes |
 | R-006 | Low notes crack at o = 0 (multistability, C-009) | medium | medium | τ_base attack shaping; inharmonicity ≥ measured; T-011; ordered decision rule | — | yes |
-| R-007 | pluginval/JUCE 9 incompatibility (C-020) | low | low | Sandbox validation attempt (see ENVIRONMENT verification log); decision rule (strictness 8 + BLOCKED for confirmation) | — | yes |
+| R-007 | pluginval/JUCE 9 incompatibility (C-020) | low | low | Verified on the stub in the sandbox (SUCCESS at strictness 10 under xvfb); decision rule (strictness 8 + BLOCKED) if a later regression appears | macOS/Windows not yet exercised | yes |
 | R-008 | TinySOL unavailable or layout differs | low | medium | MD5-verified download, CI cache, header-name mapping rule, fail-not-skip | — | yes |
 | R-009 | Headless editor test crash on CI | medium | low | `xvfb-run -a`; never skip | — | yes |
 | R-010 | CPU budget exceeded | low | medium | T-016; allowed optimisations listed in decision rules | — | yes |

@@ -640,7 +640,7 @@
  },
  {
   "id": "C-020",
-  "claim": "pluginval 1.0.4 validates VST3 plugins built with JUCE 9.0.3.",
+  "claim": "pluginval 1.0.4 validates a JUCE 9.0.3 VST3 (the stub plugin) at strictness 10 on Linux when run under a virtual display; without a display it segfaults in the Editor test.",
   "kind": "software",
   "load_bearing": true,
   "sources": [
@@ -652,9 +652,18 @@
     "locator": "",
     "accessed": "2026-10-01",
     "tier": 2
+   },
+   {
+    "url": "research/spikes/plugin_build.log",
+    "doi": "",
+    "title": "Planning sandbox pluginval run",
+    "version": "1.0.4",
+    "locator": "tail",
+    "accessed": "2026-10-01",
+    "tier": 1
    }
   ],
-  "confidence": "inferred",
+  "confidence": "verified",
   "evidence_class": "n/a",
   "contradicted_by": [],
   "informs": [

@@ -24,7 +24,7 @@ xvfb-run -a build/plugin/sax_plugin_tests               # T-029 on headless Linu
 python -m pytest tests/python -k "not tinysol"          # T-022a, T-024, T-030, T-031
 SAX_RENDER=build/tools/render/sax_render TINYSOL_DIR=reference-data/tinysol \
   python -m pytest tests/python/test_realism_vs_tinysol.py   # T-022b (needs network once)
-bash tests/scripts/run_pluginval.sh build/plugin/SaxophoneVST_artefacts/Release/VST3/Saxophone.vst3  # T-023
+xvfb-run -a bash tests/scripts/run_pluginval.sh build/plugin/SaxophoneVST_artefacts/Release/VST3/Saxophone.vst3  # T-023
 ```
 
 ## Verifying the freeze

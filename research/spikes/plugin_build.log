@@ -1,0 +1,15 @@
+# Planning-sandbox plugin build + validation (2026-10-01, 1 vCPU, 4 GB)
+cmake configure:
+-- Build files have been written to: /root/sax/build-plugin
+cfg=0
+build (Release, LTO, -j1 after an earlier -j2 run was killed):
+lto-wrapper: note: see the ‘-flto’ option documentation for more information
+build=0
+
+artefacts: build-plugin/plugin/SaxophoneVST_artefacts/Release/{VST3/Saxophone.vst3,Standalone/Saxophone}
+
+pluginval 1.0.4 --strictness-level 10 on the STUB VST3:
+ without display: segfault in 'Editor' test (exit 139)
+ under xvfb-run -a:
+SUCCESS
+pluginval exit=0

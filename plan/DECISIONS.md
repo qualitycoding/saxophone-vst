@@ -59,7 +59,7 @@ Geometry ("simplified alto", C-016 scaled by 1.5, C-017): cone half-angle 1.74°
 
 **D-017 Third-party notices.** `THIRD_PARTY_NOTICES.md` lists: JUCE 9 (AGPLv3 / JUCE licence), VST 3 SDK (MIT), nlohmann/json (MIT), Catch2 (BSL-1.0, tests only), pluginval (GPLv3, CI only, not distributed), TinySOL (CC BY 4.0, Cella et al., test data only, not distributed), Colinot et al. 2021 and Szwarcberg et al. 2025 (CC BY 4.0, model equations/parameters).
 
-**D-018 Guard tests.** T-024a (`test_cmake_dependencies_pinned_to_full_sha`), T-024b (`test_python_requirements_pinned`) and T-028 (`verify_freeze.sh`) protect planning deliverables and therefore already pass at freeze time; documented exception to "red verification". All other tests fail against the stubs.
+**D-018 Guard tests.** These protect deliverables already produced during planning and therefore pass at freeze time — a documented exception to red verification: T-024a (`test_cmake_dependencies_pinned_to_full_sha`), T-024b (`test_python_requirements_pinned`), T-028 (`verify_freeze.sh`), T-023 (pluginval: the stub plugin is already a valid VST3; verified in the planning sandbox, `research/spikes/plugin_build.log`) and the T-029 case "all D-013 parameters exist with stable IDs" (the parameter layout is a planned public interface). Every other test fails against the stubs.
 
 **D-019 Branching.** Implementation branch `impl/saxophone-v1` from the generation branch head. Commit per step: `S-0xx: <title>`. Merging into `main` is the human's choice after G-003 (not an irreversible external action).
 
@@ -67,7 +67,7 @@ Geometry ("simplified alto", C-016 scaled by 1.5, C-017): cone half-angle 1.74°
 1. `freeze` (ubuntu): `bash tests/scripts/verify_freeze.sh`.
 2. `core` (matrix ubuntu-24.04, macos-15, windows-2025; Release, `-DSAX_BUILD_PLUGIN=OFF`): build, `ctest -LE perf`, then `ctest -L perf`.
 3. `python` (ubuntu): install `tools/requirements.txt`, `pytest tests/python -k "not tinysol"`, `pip-audit -r tools/requirements.txt`.
-4. `plugin` (matrix as 2; Release, plugin ON): build; Linux under `xvfb-run`: `ctest -R plugin`; `tests/scripts/run_pluginval.sh <VST3 path>`; macOS additionally copies the AU to `~/Library/Audio/Plug-Ins/Components` and runs `auval -v aumu Saxa Qcod` (R-018); upload VST3/Standalone as workflow artifacts (retention 14 days).
+4. `plugin` (matrix as 2; Release, plugin ON): build; Linux under `xvfb-run`: `ctest -R plugin`; `xvfb-run -a tests/scripts/run_pluginval.sh <VST3 path>` on Linux (plain call on macOS/Windows; without a display pluginval segfaults, C-020); macOS additionally copies the AU to `~/Library/Audio/Plug-Ins/Components` and runs `auval -v aumu Saxa Qcod` (R-018); upload VST3/Standalone as workflow artifacts (retention 14 days).
 5. `realism` (ubuntu, needs core): cache `reference-data/tinysol` keyed on `tools/realism/tinysol.py` hash; `SAX_RENDER=build/tools/render/sax_render TINYSOL_DIR=reference-data/tinysol pytest tests/python/test_realism_vs_tinysol.py`; upload `results.json`.
 
 ## Public interfaces

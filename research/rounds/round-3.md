@@ -15,3 +15,5 @@ R6: no new testable load-bearing claims.
 Saturation: this round produced no new load-bearing claims and no confidence downgrades beyond those
 recorded; contradictions resolved. Stop after the protocol minimum of 3 rounds.
 Unmet bar (carried to Phase 4): C-010, C-017, C-020, C-021 → R-003, R-002, R-007, R-001.
+
+Addendum (post-round): C-020 upgraded to verified by running pluginval 1.0.4 on the built stub VST3 in the sandbox (research/spikes/plugin_build.log). R-007 residual reduced.

@@ -1,4 +1,4 @@
-<!-- STATUS HEADER (Phase 5) is inserted above this line -->
+<!-- STATUS: planning complete 2026-10-02 UTC. Branch: gen-20261001T211329Z-saxophone-vst-plan. Profile: software (deploys=false). Steps S-001..S-018; gates G-003, G-004 (G-001/G-002 N/A). Frozen tests: 27 files, tests/FROZEN_MANIFEST.sha256. Red verified except D-018 guard tests. Open risks: R-001 (realism ceiling, high), R-002, R-004, R-006, R-012 (medium). Execution-mode substitutions: single agent, in-context reviews (A-016). -->
 # Execution plan — saxophone-vst v1
 
 Conventions: run all commands from the repository root on branch `impl/saxophone-v1` (D-019). "Build" means
@@ -19,7 +19,7 @@ it after partial completion is safe; partial completion is detected by its "Done
   5. `ctest --test-dir build --output-on-failure || true` and `python -m pytest tests/python || true`; save outputs to `logs/S-001-red.txt`.
 - Outputs: build/, .venv/, logs/S-001-red.txt
 - Evidence produced: none (baseline)
-- Done when: freeze check prints `freeze OK`; build succeeds (plugin included); every test except the D-018 guard tests (T-024a, T-024b, T-028) fails.
+- Done when: freeze check prints `freeze OK`; build succeeds (plugin included); every test except the D-018 guard tests (T-023, T-024a, T-024b, T-028, T-029 parameter-ID case) fails.
 - Checkpoint: step, commit, red summary counts.
 - On failure: missing packages → install and retry; build failure in JUCE/plugin stub → `BLOCKED.md` (the stubs were planned to compile).
 - Gate: none

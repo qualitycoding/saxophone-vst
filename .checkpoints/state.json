@@ -1,0 +1,88 @@
+{
+ "protocol": "planning-protocol-v3.1",
+ "phase": "5-complete",
+ "branch": "gen-20261001T211329Z-saxophone-vst-plan",
+ "utc": "2026-10-02T07:25:29Z",
+ "profiles": {
+  "software": {
+   "active": true,
+   "deploys": false
+  },
+  "math": false,
+  "computational": false,
+  "publication": false
+ },
+ "research_rounds": 3,
+ "premortem_rounds": 4,
+ "claims": {
+  "total": 23,
+  "single_source": [
+   "C-010",
+   "C-021"
+  ],
+  "inferred": [
+   "C-017"
+  ]
+ },
+ "tests": {
+  "frozen_files": 27,
+  "ids": [
+   "T-001",
+   "T-002",
+   "T-003",
+   "T-004",
+   "T-005",
+   "T-006",
+   "T-007",
+   "T-008",
+   "T-009",
+   "T-010",
+   "T-011",
+   "T-012",
+   "T-013",
+   "T-014",
+   "T-015",
+   "T-016",
+   "T-017",
+   "T-018",
+   "T-019",
+   "T-020",
+   "T-021",
+   "T-022",
+   "T-023",
+   "T-024",
+   "T-025",
+   "T-026",
+   "T-027",
+   "T-028",
+   "T-029",
+   "T-030",
+   "T-031"
+  ],
+  "guard_tests": [
+   "T-023",
+   "T-024a",
+   "T-024b",
+   "T-028",
+   "T-029 parameter IDs"
+  ]
+ },
+ "gates": {
+  "G-001": "N/A",
+  "G-002": "N/A",
+  "G-003": "S-016",
+  "G-004": "S-014"
+ },
+ "substitutions": [
+  {
+   "what": "all agent roles",
+   "requested": "Fable/Opus/Sonnet/Haiku sub-agents",
+   "used": "single Opus 5.5 agent, in-context",
+   "reason": "no sub-agent spawning in claude.ai chat"
+  }
+ ],
+ "human_interactions": [
+  "0.1 halt (no push access)",
+  "0.3 intake batch answered"
+ ]
+}

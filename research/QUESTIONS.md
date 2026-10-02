@@ -6,7 +6,7 @@ Profile: `software` only. Each leaf names what it informs. Status after round 3.
 - E1 Which plugin framework/version, and what licence obligations? → D-001, D-017 — **C-001, C-002, C-003** (done)
 - E2 How to pin all dependencies reproducibly? → D-002, T-024 — **C-019, C-022, C-023** (done)
 - E3 Linux build prerequisites for JUCE? → plan/ENVIRONMENT.md — **C-002** (done, verified by install)
-- E4 How to validate a plugin like a host would? → T-023 — **C-019, C-020** (C-020 inferred → R-007)
+- E4 How to validate a plugin like a host would? → T-023 — **C-019, C-020** (C-020 verified in sandbox)
 - E5 Real-time safety rules (no alloc/locks) and how to test them? → D-010, T-015 (engineering practice; test design)
 - E6 Threat surface (state blobs, data files)? → T-006, T-017 (done: fuzz + validation)
 
