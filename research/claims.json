@@ -1,0 +1,753 @@
+[
+ {
+  "id": "C-001",
+  "claim": "JUCE modules (8.x and 9.x) are dual-licensed AGPLv3 / commercial JUCE licence; repo code may carry its own licence (Apache-2.0), distributed binaries are governed by the JUCE licence chosen at build time.",
+  "kind": "policy",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://raw.githubusercontent.com/juce-framework/JUCE/9.0.3/LICENSE.md",
+    "doi": "",
+    "title": "JUCE LICENSE.md",
+    "version": "9.0.3",
+    "locator": "lines 1-8",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://github.com/juce-framework/JUCE/commit/94d98a2b102035346433c87410d341f0e2ebf5e3",
+    "doi": "",
+    "title": "JUCE commit 94d98a2 (licence change to AGPLv3)",
+    "version": "",
+    "locator": "LICENSE.md diff",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://forum.juce.com/t/nam-juce-port/64591",
+    "doi": "",
+    "title": "JUCE forum: NAM Juce port licensing thread",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 4
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-001",
+   "D-017",
+   "A-013"
+  ]
+ },
+ {
+  "id": "C-002",
+  "claim": "Latest JUCE release is 9.0.3 (2026-09-28), commit be29c81492b6151c8ea8d14c840e1311963b3a83; requires CMake >= 3.22 and C++17 or later; Linux build deps listed in docs/Linux Dependencies.md.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://api.github.com/repos/juce-framework/JUCE/releases",
+    "doi": "",
+    "title": "GitHub releases API juce-framework/JUCE",
+    "version": "",
+    "locator": "tag 9.0.3",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://raw.githubusercontent.com/juce-framework/JUCE/9.0.3/CMakeLists.txt",
+    "doi": "",
+    "title": "JUCE CMakeLists.txt",
+    "version": "9.0.3",
+    "locator": "line 33",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://raw.githubusercontent.com/juce-framework/JUCE/9.0.3/modules/juce_core/system/juce_CompilerSupport.h",
+    "doi": "",
+    "title": "juce_CompilerSupport.h",
+    "version": "",
+    "locator": "line 112",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://raw.githubusercontent.com/juce-framework/JUCE/9.0.3/docs/Linux%20Dependencies.md",
+    "doi": "",
+    "title": "JUCE Linux Dependencies.md",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-001",
+   "D-002",
+   "plan/ENVIRONMENT.md"
+  ]
+ },
+ {
+  "id": "C-003",
+  "claim": "The VST 3 SDK is MIT-licensed from version 3.8 (October 2025).",
+  "kind": "policy",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://ocl-steinberg-live.steinberg.net/_storage/asset/819253/storage/master/Press%20Release%20-%202025-10-29%20-%20VST%203.8%20-%20EN.pdf",
+    "doi": "",
+    "title": "Steinberg press release VST 3.8",
+    "version": "",
+    "locator": "p.1",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://heise.de/-10963451",
+    "doi": "",
+    "title": "heise online",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 3
+   },
+   {
+    "url": "https://www.soundonsound.com/node/4934285",
+    "doi": "",
+    "title": "Sound On Sound",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-017"
+  ]
+ },
+ {
+  "id": "C-004",
+  "claim": "Alto saxophone: written Bb3-F#6 (with high F# key) sounding concert Db3-A5 (MIDI 49-81); it sounds a major sixth (9 semitones) below written.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://newt.phys.unsw.edu.au/music/tenor/legend.html",
+    "doi": "",
+    "title": "UNSW saxophone fingering legend (Eb transposition, C4 = middle C)",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Alto_saxophone",
+    "doi": "",
+    "title": "Wikipedia: Alto saxophone",
+    "version": "",
+    "locator": "Range",
+    "accessed": "2026-10-01",
+    "tier": 3
+   },
+   {
+    "url": "https://omeka-s.grinnell.edu/s/MusicalInstruments/item/1247",
+    "doi": "",
+    "title": "Grinnell Musical Instruments: alto saxophone (cites NGDMI v.3)",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 3
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "T-001",
+   "SC-2",
+   "D-004"
+  ]
+ },
+ {
+  "id": "C-005",
+  "claim": "TinySOL v6.0 (Zenodo 3685367): 2913 single notes from 14 instruments including Alto Saxophone, ordinario technique only, CC BY 4.0; ~1 % pitches missing, ~20 % slightly out of tune (A440); archive TinySOL.tar.gz + TinySOL_metadata.csv.",
+  "kind": "bibliographic",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://zenodo.org/record/3685367",
+    "doi": "",
+    "title": "TinySOL Zenodo record v6.0",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://mirdata.readthedocs.io/en/latest/_modules/mirdata/datasets/tinysol.html",
+    "doi": "",
+    "title": "mirdata TinySOL loader",
+    "version": "",
+    "locator": "REMOTES",
+    "accessed": "2026-10-01",
+    "tier": 2
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-015",
+   "T-022b",
+   "A-005"
+  ]
+ },
+ {
+  "id": "C-006",
+  "claim": "Saxophone model (Colinot et al. 2021): 1-DOF reed with contact force Kc*min(x+1,0)^2, Bernoulli flow u = zeta*max(x+1,0)*sign(gamma-p)*sqrt|gamma-p|, modal input impedance (Nm = 8); Table 1: zeta 0.6, q_r 1, omega_r 4224 rad/s, Kc 100, eta 1e-3; Table 2: D# fingering poles/residues.",
+  "kind": "mathematical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2021/01/aacus200059/aacus200059.html",
+    "doi": "10.1051/aacus/2021026",
+    "title": "Colinot, Vergez, Guillemain, Doc, Multistability of saxophone oscillation regimes...",
+    "version": "",
+    "locator": "eqs. (4)-(13), Tables 1-2",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "research/spikes/colinot_spike_result.json",
+    "doi": "",
+    "title": "Spike S1 research/spikes/colinot_spike.py",
+    "version": "",
+    "locator": "output",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "cited",
+  "contradicted_by": [],
+  "informs": [
+   "D-005",
+   "T-007",
+   "T-008"
+  ]
+ },
+ {
+  "id": "C-007",
+  "claim": "Measured alto inharmonicity f2/f1 is slightly above 2 (~2.065); making f2/f1 = 2 increases second-register production. Spike S2 reproduces: 4/9 -> 8/9 second-register outcomes.",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2021/01/aacus200059/aacus200059.html",
+    "doi": "10.1051/aacus/2021026",
+    "title": "Colinot et al. 2021",
+    "version": "",
+    "locator": "sec. 5, Figs. 9-12",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "research/spikes/overblow_map_result.json",
+    "doi": "",
+    "title": "Spike S2",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "numerically-supported",
+  "contradicted_by": [],
+  "informs": [
+   "D-006",
+   "T-009",
+   "T-026"
+  ]
+ },
+ {
+  "id": "C-008",
+  "claim": "Colinot's finite-difference time-domain synthesis used Fs = 176 400 Hz (4x audio rate) for accuracy matching harmonic balance.",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2021/01/aacus200059/aacus200059.html",
+    "doi": "10.1051/aacus/2021026",
+    "title": "Colinot et al. 2021",
+    "version": "",
+    "locator": "sec. 2.2",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "cited",
+  "contradicted_by": [],
+  "informs": [
+   "D-005",
+   "T-008"
+  ]
+ },
+ {
+  "id": "C-009",
+  "claim": "Regime selection is multistable: the same final blowing pressure gives first or second register depending on attack rise time tau_g; for D# second register emerges around gamma 0.65-0.9.",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2021/01/aacus200059/aacus200059.html",
+    "doi": "10.1051/aacus/2021026",
+    "title": "Colinot et al. 2021",
+    "version": "",
+    "locator": "sec. 3-4, Figs. 3, 6",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "research/spikes/colinot_spike_result.json",
+    "doi": "",
+    "title": "Spike S1",
+    "version": "",
+    "locator": "g0.9_tau0.003 -> 381 Hz",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "numerically-supported",
+  "contradicted_by": [],
+  "informs": [
+   "D-006",
+   "D-007",
+   "T-008"
+  ]
+ },
+ {
+  "id": "C-010",
+  "claim": "Standard (basic) saxophone fingerings for written Bb3-F6 as in the Woodwind Fingering Guide basic chart (e.g. Bb3/B3/C#4 include RH low C; E6 = palm D+Eb + side E; F6 adds palm F).",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.lee.k12.al.us/cms/lib/AL02210054/Centricity/Domain/305/fingering.chart.saxophone.basic.pdf",
+    "doi": "",
+    "title": "WFG Basic Fingering Chart for Saxophone (school mirror)",
+    "version": "",
+    "locator": "pp. 5-8",
+    "accessed": "2026-10-01",
+    "tier": 3
+   },
+   {
+    "url": "https://www.wfg.woodwind.org/sax/sax_fing.html",
+    "doi": "",
+    "title": "WFG saxophone fingering scheme",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 3
+   }
+  ],
+  "confidence": "single-source",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-004",
+   "T-003",
+   "G-004"
+  ]
+ },
+ {
+  "id": "C-011",
+  "claim": "UNSW 'Saxophone acoustics' compendium covers soprano and tenor (not alto): impedance and sound for all standard fingerings; impedance shown as images.",
+  "kind": "bibliographic",
+  "load_bearing": false,
+  "sources": [
+   {
+    "url": "https://www.phys.unsw.edu.au/jw/reprints/ChenetalAA.pdf",
+    "doi": "",
+    "title": "Chen, Smith, Wolfe, Acoustics Australia 37 (2009) 18-23",
+    "version": "",
+    "locator": "abstract",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://newt.phys.unsw.edu.au/music/tenor/C4.html",
+    "doi": "",
+    "title": "UNSW tenor C4 page",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-009"
+  ]
+ },
+ {
+  "id": "C-012",
+  "claim": "Saxophones have two register holes; the downstream (body) one serves Bb4-G#5 and the upstream (neck) one A5-F#6; they are never open together.",
+  "kind": "mathematical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2025/01/aacus250082/aacus250082.html",
+    "doi": "10.1051/aacus/2025039",
+    "title": "Szwarcberg, Colinot, Vergez, Jousserand 2025",
+    "version": "",
+    "locator": "sec. 3",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2021/01/aacus200059/aacus200059.html",
+    "doi": "10.1051/aacus/2021026",
+    "title": "Colinot et al. 2021",
+    "version": "",
+    "locator": "sec. 3.1",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "cited",
+  "contradicted_by": [],
+  "informs": [
+   "D-004",
+   "T-004"
+  ]
+ },
+ {
+  "id": "C-013",
+  "claim": "Played frequency sits a little below the first impedance resonance (D#: f1 = 190.2 Hz, played ~185 Hz; spike 189.1 Hz).",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2021/01/aacus200059/aacus200059.html",
+    "doi": "10.1051/aacus/2021026",
+    "title": "Colinot et al. 2021",
+    "version": "",
+    "locator": "Table 2 + sec. 3.1",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "research/spikes/colinot_spike_result.json",
+    "doi": "",
+    "title": "Spike S1",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "numerically-supported",
+  "contradicted_by": [],
+  "informs": [
+   "D-008",
+   "T-026"
+  ]
+ },
+ {
+  "id": "C-014",
+  "claim": "Between registers the model produces stable quasi-periodic regimes (multiphonic-like) after a Neimark-Sacker bifurcation.",
+  "kind": "mathematical",
+  "load_bearing": false,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2021/01/aacus200059/aacus200059.html",
+    "doi": "10.1051/aacus/2021026",
+    "title": "Colinot et al. 2021",
+    "version": "",
+    "locator": "sec. 3.1-3.2",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "cited",
+  "contradicted_by": [],
+  "informs": [
+   "D-006"
+  ]
+ },
+ {
+  "id": "C-015",
+  "claim": "Second-register notes deviate from the octave by tens of cents (soprano model minimum +18.6 / +68.8 cents for the two register holes).",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2025/01/aacus250082/aacus250082.html",
+    "doi": "10.1051/aacus/2025039",
+    "title": "Szwarcberg et al. 2025",
+    "version": "",
+    "locator": "sec. 3.2, Fig. 4",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "cited",
+  "contradicted_by": [],
+  "informs": [
+   "T-012"
+  ]
+ },
+ {
+  "id": "C-016",
+  "claim": "Simplified saxophone: truncated cone + cylindrical mouthpiece of length R1/(3 tan phi) + register side hole; soprano parameters phi 1.74 deg, R1 4.6 mm, L1 40/130 mm, Rh 0.85/1.4 mm, Lh 4 mm; TMM modal extraction with Nm = 8 is accurate to <0.1 cent for peak 1.",
+  "kind": "mathematical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2025/01/aacus250082/aacus250082.html",
+    "doi": "10.1051/aacus/2025039",
+    "title": "Szwarcberg et al. 2025",
+    "version": "",
+    "locator": "Fig. 1, eq. 9, Table 1, sec. 3.1",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "corroborated",
+  "evidence_class": "cited",
+  "contradicted_by": [],
+  "informs": [
+   "D-009",
+   "T-030"
+  ]
+ },
+ {
+  "id": "C-017",
+  "claim": "An alto is approximately a 1.5x geometric scale of a soprano (lowest note 207.65 Hz vs 138.59 Hz: ratio 1.498); Colinot's alto crook input radius is 6 mm.",
+  "kind": "numerical",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://acta-acustica.edpsciences.org/articles/aacus/full_html/2021/01/aacus200059/aacus200059.html",
+    "doi": "10.1051/aacus/2021026",
+    "title": "Colinot et al. 2021",
+    "version": "",
+    "locator": "sec. 2.1.3",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "inferred",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-009"
+  ]
+ },
+ {
+  "id": "C-018",
+  "claim": "OpenWInD 0.12.4 is GPLv3 Python (pip-installable); suitable as an optional, unshipped cross-check only.",
+  "kind": "policy",
+  "load_bearing": false,
+  "sources": [
+   {
+    "url": "https://pypi.org/project/openwind",
+    "doi": "",
+    "title": "PyPI openwind",
+    "version": "0.12.4",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://openwind.inria.fr/",
+    "doi": "",
+    "title": "openwind.inria.fr",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-009"
+  ]
+ },
+ {
+  "id": "C-019",
+  "claim": "Pinned dependency SHAs: Catch2 v3.16.0 317ac1ed..., nlohmann/json v3.12.0 55f93686..., pluginval v1.0.4 (latest, 2024-12-04) zip SHA-256s recorded in tests/scripts/run_pluginval.sh.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://api.github.com/repos/catchorg/Catch2/commits/v3.16.0",
+    "doi": "",
+    "title": "GitHub API commits/releases",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://api.github.com/repos/nlohmann/json/commits/v3.12.0",
+    "doi": "",
+    "title": "GitHub API",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://github.com/Tracktion/pluginval/releases/tag/v1.0.4",
+    "doi": "",
+    "title": "pluginval release v1.0.4",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-002",
+   "T-023",
+   "T-024"
+  ]
+ },
+ {
+  "id": "C-020",
+  "claim": "pluginval 1.0.4 validates VST3 plugins built with JUCE 9.0.3.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://github.com/Tracktion/pluginval/releases",
+    "doi": "",
+    "title": "pluginval release notes",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 2
+   }
+  ],
+  "confidence": "inferred",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "T-023"
+  ]
+ },
+ {
+  "id": "C-021",
+  "claim": "An 8-mode modal resonator + reed model alone does not give a realistic radiated sound; a radiation (bell/tone-hole lattice) filter and turbulence noise are required.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://www.phys.unsw.edu.au/jw/reprints/ChenetalAA.pdf",
+    "doi": "",
+    "title": "Chen, Smith, Wolfe 2009 (cut-off frequency, spectra)",
+    "version": "",
+    "locator": "sound spectra discussion",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "https://newt.phys.unsw.edu.au/music/saxophone/soprano/Csharp4.html",
+    "doi": "",
+    "title": "UNSW soprano C#4 page (cut-off ~1.2 kHz)",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "single-source",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-014",
+   "T-022b"
+  ]
+ },
+ {
+  "id": "C-022",
+  "claim": "Latest GitHub Actions: checkout v7.0.1 (3d3c42e5...), setup-python v7.0.0 (5fda3b95...), cache v6.1.0 (55cc8345...), upload-artifact v7.0.1 (043fb46d...).",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://api.github.com/repos/actions/checkout/releases/latest",
+    "doi": "",
+    "title": "GitHub API releases/commits",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "D-020",
+   "T-024"
+  ]
+ },
+ {
+  "id": "C-023",
+  "claim": "Python 3.12 + numpy 2.5.3, scipy 1.18.1, soundfile 0.14.0, pytest 9.1.1, pip-audit 2.10.1 install together.",
+  "kind": "software",
+  "load_bearing": true,
+  "sources": [
+   {
+    "url": "https://pypi.org/pypi/numpy/json",
+    "doi": "",
+    "title": "PyPI JSON API",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   },
+   {
+    "url": "tools/requirements.lock",
+    "doi": "",
+    "title": "sandbox install log",
+    "version": "",
+    "locator": "",
+    "accessed": "2026-10-01",
+    "tier": 1
+   }
+  ],
+  "confidence": "verified",
+  "evidence_class": "n/a",
+  "contradicted_by": [],
+  "informs": [
+   "plan/ENVIRONMENT.md"
+  ]
+ }
+]
