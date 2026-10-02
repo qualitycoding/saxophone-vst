@@ -1,0 +1,117 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: read
+
+jobs:
+  freeze:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: bash tests/scripts/verify_freeze.sh
+      - run: sha256sum --check --strict --quiet tests/FROZEN_MANIFEST.sha256
+
+  core:
+    needs: freeze
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2025]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSAX_BUILD_PLUGIN=OFF
+      - name: Build
+        run: cmake --build build --config Release -j 4
+      - name: Test (non-perf)
+        run: ctest --test-dir build -C Release -LE perf --output-on-failure
+      - name: Test (perf)
+        run: ctest --test-dir build -C Release -L perf --output-on-failure
+
+  python:
+    needs: freeze
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - run: python -m pytest tests/python -k "not tinysol"
+      - run: pip-audit -r tools/requirements.txt
+
+  plugin:
+    needs: freeze
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15, windows-2025]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Linux packages
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev libjack-jackd2-dev ladspa-sdk libfreetype-dev \
+            libfontconfig1-dev libx11-dev libxcomposite-dev libxcursor-dev libxext-dev libxinerama-dev \
+            libxrandr-dev libxrender-dev libxi-dev libcurl4-openssl-dev xvfb
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --config Release -j 4
+      - name: Plugin tests (Linux, virtual display)
+        if: runner.os == 'Linux'
+        run: xvfb-run -a build/plugin/sax_plugin_tests
+      - name: Plugin tests
+        if: runner.os != 'Linux'
+        shell: bash
+        run: |
+          exe=$(find build -name 'sax_plugin_tests*' -type f -perm -u+x | head -1)
+          "$exe"
+      - name: pluginval (Linux)
+        if: runner.os == 'Linux'
+        run: xvfb-run -a bash tests/scripts/run_pluginval.sh build/plugin/SaxophoneVST_artefacts/Release/VST3/Saxophone.vst3
+      - name: pluginval (macOS)
+        if: runner.os == 'macOS'
+        run: bash tests/scripts/run_pluginval.sh build/plugin/SaxophoneVST_artefacts/Release/VST3/Saxophone.vst3
+      - name: pluginval (Windows)
+        if: runner.os == 'Windows'
+        shell: bash
+        run: bash tests/scripts/run_pluginval.sh build/plugin/SaxophoneVST_artefacts/Release/VST3/Saxophone.vst3
+      - name: auval (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          mkdir -p ~/Library/Audio/Plug-Ins/Components
+          cp -R build/plugin/SaxophoneVST_artefacts/Release/AU/Saxophone.component ~/Library/Audio/Plug-Ins/Components/
+          auval -v aumu Saxa Qcod
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: plugin-${{ matrix.os }}
+          path: |
+            build/plugin/SaxophoneVST_artefacts/Release/VST3
+            build/plugin/SaxophoneVST_artefacts/Release/Standalone
+          retention-days: 14
+
+  realism:
+    needs: core
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: reference-data/tinysol
+          key: tinysol-${{ hashFiles('tools/realism/tinysol.py') }}
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSAX_BUILD_PLUGIN=OFF -DSAX_BUILD_TESTS=OFF && cmake --build build -j 4
+      - run: SAX_RENDER=build/tools/render/sax_render TINYSOL_DIR=reference-data/tinysol python -m pytest tests/python/test_realism_vs_tinysol.py
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: realism-results
+          path: reference-data/results.json
+          retention-days: 14
