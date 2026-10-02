@@ -8,9 +8,13 @@ class SaxophoneView final : public juce::Component {
 public:
     SaxophoneView();
     void paint(juce::Graphics&) override;
-    /// Called by the editor's 60 Hz timer; repaints only if the set changed. Stub: ignores input.
+    /// Called by the editor's 60 Hz timer; repaints only if the set changed.
     void setHighlightedKeys(const sax::KeySet& keys);
     sax::KeySet highlightedKeys() const noexcept;
+
+    /// Aspect ratio (width / height) of the drawing inside the component bounds.
+    static constexpr float kAspect = 0.8f;
+
 private:
     sax::KeySet keys_;
 };
