@@ -500,7 +500,7 @@ struct SaxVoice::Impl {
         else base = T::kGammaBase + T::kGammaVel * velS;
         gammaTarget = std::min(T::kGammaMax, base * (1.0 + T::kOverGamma * oEff) * (1.0 + T::kVibratoGamma * vib));
 
-        const double db = T::kShelfBaseDb + T::kShelfBrightDb * brS;
+        const double db = T::kShelfBaseDb + T::kShelfBrightDb * brS + T::kOverBrightDb * oEff;
         if (std::abs(db - shelfDb) > 0.02) {
             shelf.highShelf(fs, std::min(T::kShelfHz, 0.4 * fs), db);
             shelfDb = db;

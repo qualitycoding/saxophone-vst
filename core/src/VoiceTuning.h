@@ -36,7 +36,7 @@ inline constexpr double kOverWarp   = 0.8;
 inline constexpr double kOverTau    = 0.9;
 inline constexpr double kOverNoise  = 1.0;
 inline constexpr double kHarmMinOverblow = 0.6;
-inline constexpr double kHarmMode1Scale  = 0.3;
+inline constexpr double kHarmMode1Scale  = 0.1;
 
 // expression (D-011)
 inline constexpr double kVibratoCents   = 15.0;
@@ -50,6 +50,7 @@ inline constexpr double kDcHz          = 5.0;
 inline constexpr double kShelfHz       = 800.0;
 inline constexpr double kShelfBaseDb   = -6.0;
 inline constexpr double kShelfBrightDb = 9.0;
+inline constexpr double kOverBrightDb  = 12.0;      // extra high-shelf gain at overblow = 1
 inline constexpr double kNoiseGain     = 0.05;
 inline constexpr double kNoiseLoHz     = 1000.0;
 inline constexpr double kNoiseHiHz     = 6000.0;
