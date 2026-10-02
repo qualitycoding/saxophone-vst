@@ -17,6 +17,7 @@ struct Mode {
 struct ResonatorParams {
     std::vector<Mode> modes;      ///< 4 <= size <= 16, sorted by Im(pole) ascending
     double tuningScale = 1.0;     ///< D-008: multiplies every Im(pole) at run time (calibrated by S-009)
+    double harmonicStretch = 1.0; ///< Harmonic mode only: Im(pole 2) = 2 * harmonicStretch * Im(pole 1) (calibrated by S-009)
 };
 
 /// Immutable table loaded from data/alto_resonators.json (schema "saxophone-vst/resonators@1",

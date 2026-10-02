@@ -1,6 +1,7 @@
 {
  "entries": [
   {
+   "harmonic_stretch": 1.0054999999999994,
    "hole": "none",
    "modes": [
     {
@@ -52,10 +53,11 @@
      "re_s": -62.348
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9846519158543864,
    "written": 58
   },
   {
+   "harmonic_stretch": 1.0039999999999996,
    "hole": "none",
    "modes": [
     {
@@ -107,10 +109,11 @@
      "re_s": -67.9735
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.984168114434829,
    "written": 59
   },
   {
+   "harmonic_stretch": 0.9984999999999997,
    "hole": "none",
    "modes": [
     {
@@ -162,10 +165,11 @@
      "re_s": -74.2065
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9846335957299098,
    "written": 60
   },
   {
+   "harmonic_stretch": 0.9974999999999998,
    "hole": "none",
    "modes": [
     {
@@ -217,10 +221,11 @@
      "re_s": -81.0416
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9834758269795338,
    "written": 61
   },
   {
+   "harmonic_stretch": 1.0064999999999997,
    "hole": "none",
    "modes": [
     {
@@ -272,10 +277,11 @@
      "re_s": -88.5437
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9832425064360634,
    "written": 62
   },
   {
+   "harmonic_stretch": 1.017999999999999,
    "hole": "none",
    "modes": [
     {
@@ -327,10 +333,11 @@
      "re_s": -96.6924
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9828082287447975,
    "written": 63
   },
   {
+   "harmonic_stretch": 1.0279999999999991,
    "hole": "none",
    "modes": [
     {
@@ -382,10 +389,11 @@
      "re_s": -105.549
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9848953813877352,
    "written": 64
   },
   {
+   "harmonic_stretch": 1.033499999999999,
    "hole": "none",
    "modes": [
     {
@@ -437,10 +445,11 @@
      "re_s": -115.046
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9854135905828845,
    "written": 65
   },
   {
+   "harmonic_stretch": 1.0384999999999989,
    "hole": "none",
    "modes": [
     {
@@ -492,10 +501,11 @@
      "re_s": -125.245
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9838260242757948,
    "written": 66
   },
   {
+   "harmonic_stretch": 1.0464999999999984,
    "hole": "none",
    "modes": [
     {
@@ -547,10 +557,11 @@
      "re_s": -136.254
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9817059076849025,
    "written": 67
   },
   {
+   "harmonic_stretch": 1.0529999999999986,
    "hole": "none",
    "modes": [
     {
@@ -602,10 +613,11 @@
      "re_s": -148.409
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9802002901282897,
    "written": 68
   },
   {
+   "harmonic_stretch": 1.0549999999999988,
    "hole": "none",
    "modes": [
     {
@@ -657,10 +669,11 @@
      "re_s": -162.187
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9823154512727212,
    "written": 69
   },
   {
+   "harmonic_stretch": 1.0469999999999984,
    "hole": "none",
    "modes": [
     {
@@ -712,10 +725,11 @@
      "re_s": -178.274
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9887701815117705,
    "written": 70
   },
   {
+   "harmonic_stretch": 1.033999999999999,
    "hole": "none",
    "modes": [
     {
@@ -767,10 +781,11 @@
      "re_s": -197.688
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9914612955138761,
    "written": 71
   },
   {
+   "harmonic_stretch": 1.0384999999999989,
    "hole": "none",
    "modes": [
     {
@@ -822,10 +837,11 @@
      "re_s": -221.26
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9915693813340027,
    "written": 72
   },
   {
+   "harmonic_stretch": 1.0489999999999986,
    "hole": "none",
    "modes": [
     {
@@ -877,7 +893,7 @@
      "re_s": -249.226
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9882761770134715,
    "written": 73
   },
   {
@@ -932,7 +948,7 @@
      "re_s": -90.4483
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9630258683899802,
    "written": 74
   },
   {
@@ -987,7 +1003,7 @@
      "re_s": -101.75
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9670719595023467,
    "written": 75
   },
   {
@@ -1042,7 +1058,7 @@
      "re_s": -111.699
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9779763947675204,
    "written": 76
   },
   {
@@ -1097,7 +1113,7 @@
      "re_s": -117.619
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.992251234002105,
    "written": 77
   },
   {
@@ -1152,7 +1168,7 @@
      "re_s": -124.293
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9986056169453538,
    "written": 78
   },
   {
@@ -1207,7 +1223,7 @@
      "re_s": -139.149
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9883284996534575,
    "written": 79
   },
   {
@@ -1262,7 +1278,7 @@
      "re_s": -155.859
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9733577994769315,
    "written": 80
   },
   {
@@ -1317,7 +1333,7 @@
      "re_s": -164.518
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 1.0015245211992732,
    "written": 81
   },
   {
@@ -1372,7 +1388,7 @@
      "re_s": -178.091
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9966742494693519,
    "written": 82
   },
   {
@@ -1427,7 +1443,7 @@
      "re_s": -197.266
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9889925912288331,
    "written": 83
   },
   {
@@ -1482,7 +1498,7 @@
      "re_s": -224.14
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.980412977104136,
    "written": 84
   },
   {
@@ -1537,7 +1553,7 @@
      "re_s": -255.099
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9698667767404997,
    "written": 85
   },
   {
@@ -1592,7 +1608,7 @@
      "re_s": -283.366
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9554271054368841,
    "written": 86
   },
   {
@@ -1647,7 +1663,7 @@
      "re_s": -311.303
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9379807433304336,
    "written": 87
   },
   {
@@ -1702,7 +1718,7 @@
      "re_s": -350.596
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9187041275425687,
    "written": 88
   },
   {
@@ -1757,7 +1773,7 @@
      "re_s": -356.549
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 0.9636060210400631,
    "written": 89
   },
   {
@@ -1812,12 +1828,13 @@
      "re_s": -356.549
     }
    ],
-   "tuning_scale": 1.0,
+   "tuning_scale": 1.0209050167943534,
    "written": 90
   }
  ],
  "instrument": "alto",
  "provenance": {
+  "calibrated": "tools/render/calibrate_tuning.cpp; 48 kHz, velocity 0.6, A4 440",
   "generator": "tools/resonator/generate_table.py",
   "geometry": "D-009",
   "git": "80d27b2eb6c7347c6254a1a3cb860699d122f807"

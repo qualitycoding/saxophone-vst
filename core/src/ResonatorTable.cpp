@@ -66,6 +66,10 @@ ResonatorTable ResonatorTable::fromJson(std::string_view text) {
                 p.tuningScale = number(e, "tuning_scale");
                 if (p.tuningScale < 0.8 || p.tuningScale > 1.25) fail("tuning_scale outside [0.8, 1.25]");
             }
+            if (e.contains("harmonic_stretch")) {
+                p.harmonicStretch = number(e, "harmonic_stretch");
+                if (p.harmonicStretch < 0.8 || p.harmonicStretch > 1.25) fail("harmonic_stretch outside [0.8, 1.25]");
+            }
             const auto md = e.find("modes");
             if (md == e.end() || !md->is_array()) fail("missing 'modes'");
             if (md->size() < 4 || md->size() > 16) fail("mode count outside [4, 16]");

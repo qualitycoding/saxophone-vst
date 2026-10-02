@@ -37,6 +37,7 @@ struct Reso {
     int n = 0;
     std::array<double, kMaxModes> sRe{}, sIm{}, cRe{}, cIm{};
     double tuning = 1.0;
+    double hStretch = 1.0;
     bool firstRegisterFingering = true; // hole == None (overblow warp applies)
 };
 
@@ -51,6 +52,7 @@ Reso makeReso(const ResonatorParams& p, bool noHole) {
         r.cIm[static_cast<std::size_t>(i)] = m.residue.imag();
     }
     r.tuning = p.tuningScale;
+    r.hStretch = p.harmonicStretch;
     r.firstRegisterFingering = noHole;
     return r;
 }
@@ -381,7 +383,7 @@ struct SaxVoice::Impl {
         const int written = res->fingering.writtenMidi;
         Reso target = cache[static_cast<std::size_t>(written - kLowestWritten)];
         if (res->harmonicOverblow && target.n >= 2) { // D-007
-            target.sIm[1] = 2.0 * target.sIm[0];
+            target.sIm[1] = 2.0 * target.hStretch * target.sIm[0];
             target.cRe[0] *= T::kHarmMode1Scale;
             target.cIm[0] *= T::kHarmMode1Scale;
         }
