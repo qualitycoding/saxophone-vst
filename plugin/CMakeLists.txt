@@ -28,8 +28,8 @@ target_link_libraries(SaxophoneVST
   PUBLIC juce::juce_recommended_config_flags juce::juce_recommended_lto_flags juce::juce_recommended_warning_flags)
 
 # UI snapshot tool for the G-004 review bundle (tools/render/snapshot_ui.cpp)
-add_executable(sax_snapshot_ui ${CMAKE_SOURCE_DIR}/tools/render/snapshot_ui.cpp)
-target_link_libraries(sax_snapshot_ui PRIVATE SaxophoneVST)
+add_executable(sax_ui_snapshots ${CMAKE_SOURCE_DIR}/tools/render/snapshot_ui.cpp)
+target_link_libraries(sax_ui_snapshots PRIVATE SaxophoneVST)
 
 if(SAX_BUILD_TESTS)
   add_executable(sax_plugin_tests ${CMAKE_SOURCE_DIR}/tests/plugin/test_plugin.cpp)

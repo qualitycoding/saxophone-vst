@@ -1,0 +1,37 @@
+# FROZEN — DO NOT MODIFY (hash in tests/FROZEN_MANIFEST.sha256)
+# Standard alto-saxophone fingerings, written pitch (MIDI, C4=60). Source: Woodwind Fingering
+# Guide "Basic Fingering Chart for Saxophone" (C-010), with D-004 choices (Bb4/Bb5 = bis,
+# F#6 = F6 fingering + high F# key). Format: <written> <register> <hole> : <key names...>
+58 1 none : lh1 lh2 lh3 low_bb rh1 rh2 rh3 low_c
+59 1 none : lh1 lh2 lh3 low_b rh1 rh2 rh3 low_c
+60 1 none : lh1 lh2 lh3 rh1 rh2 rh3 low_c
+61 1 none : lh1 lh2 lh3 low_c_sharp rh1 rh2 rh3 low_c
+62 1 none : lh1 lh2 lh3 rh1 rh2 rh3
+63 1 none : lh1 lh2 lh3 rh1 rh2 rh3 low_eb
+64 1 none : lh1 lh2 lh3 rh1 rh2
+65 1 none : lh1 lh2 lh3 rh1
+66 1 none : lh1 lh2 lh3 rh2
+67 1 none : lh1 lh2 lh3
+68 1 none : lh1 lh2 lh3 g_sharp
+69 1 none : lh1 lh2
+70 1 none : lh1 bis
+71 1 none : lh1
+72 1 none : lh2
+73 1 none :
+74 2 body : octave lh1 lh2 lh3 rh1 rh2 rh3
+75 2 body : octave lh1 lh2 lh3 rh1 rh2 rh3 low_eb
+76 2 body : octave lh1 lh2 lh3 rh1 rh2
+77 2 body : octave lh1 lh2 lh3 rh1
+78 2 body : octave lh1 lh2 lh3 rh2
+79 2 body : octave lh1 lh2 lh3
+80 2 body : octave lh1 lh2 lh3 g_sharp
+81 2 neck : octave lh1 lh2
+82 2 neck : octave lh1 bis
+83 2 neck : octave lh1
+84 2 neck : octave lh2
+85 2 neck : octave
+86 2 neck : octave palm_d
+87 2 neck : octave palm_d palm_eb
+88 2 neck : octave palm_d palm_eb side_e
+89 2 neck : octave palm_d palm_eb palm_f side_e
+90 2 neck : octave palm_d palm_eb palm_f side_e high_f_sharp

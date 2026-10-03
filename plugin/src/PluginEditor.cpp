@@ -36,6 +36,9 @@ SaxophoneAudioProcessorEditor::SaxophoneAudioProcessorEditor(SaxophoneAudioProce
     addRow(rows_[7], "Tuning A4", param::tuning, " Hz", 1);
     addRow(rows_[8], "Output gain", param::outputGain, " dB", 1);
 
+    setResizable(true, true);
+    setResizeLimits(675, 450, 1800, 1200); // 0.75x .. 2x of 900x600 (D-016)
+    getConstrainer()->setFixedAspectRatio(1.5);
     setSize(900, 600);
     refreshFromProcessor();
     startTimerHz(60);
@@ -56,22 +59,30 @@ void SaxophoneAudioProcessorEditor::addRow(Row& row, const char* title, const ch
     addAndMakeVisible(row.label);
     addAndMakeVisible(row.slider);
     row.attachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(proc_.parameters(), paramId, row.slider);
+    // The attachment installs the parameter's own (7-decimal) text conversion; override it for display.
+    row.slider.textFromValueFunction = [decimals](double v) { return juce::String(v, decimals); }; // the slider appends the suffix
+    row.slider.valueFromTextFunction = [](const juce::String& t) { return t.getDoubleValue(); };
+    row.slider.updateText();
 }
 
 void SaxophoneAudioProcessorEditor::paint(juce::Graphics& g) { g.fillAll(juce::Colour(0xff1d2027)); }
 
 void SaxophoneAudioProcessorEditor::resized() {
-    auto area = getLocalBounds().reduced(10);
-    view_.setBounds(area.removeFromLeft(440));
-    area.removeFromLeft(14);
-    title_.setBounds(area.removeFromTop(36));
-    noteLabel_.setBounds(area.removeFromTop(26));
-    area.removeFromTop(10);
-    harmonic_.setBounds(area.removeFromTop(44));
-    area.removeFromTop(6);
+    auto area = getLocalBounds().reduced(getWidth() / 90);
+    const float s = static_cast<float>(getHeight()) / 600.0f; // everything scales with the window
+    view_.setBounds(area.removeFromLeft(static_cast<int>(area.getWidth() * 0.6f)));
+    area.removeFromLeft(static_cast<int>(14 * s));
+    title_.setFont(juce::FontOptions(24.0f * s, juce::Font::bold));
+    noteLabel_.setFont(juce::FontOptions(16.0f * s));
+    title_.setBounds(area.removeFromTop(static_cast<int>(36 * s)));
+    noteLabel_.setBounds(area.removeFromTop(static_cast<int>(26 * s)));
+    area.removeFromTop(static_cast<int>(10 * s));
+    harmonic_.setBounds(area.removeFromTop(static_cast<int>(44 * s)));
+    area.removeFromTop(static_cast<int>(6 * s));
+    const int rowH = area.getHeight() / static_cast<int>(rows_.size());
     for (auto& r : rows_) {
-        auto row = area.removeFromTop(52);
-        r.label.setBounds(row.removeFromTop(20));
+        auto row = area.removeFromTop(rowH);
+        r.label.setBounds(row.removeFromTop(static_cast<int>(20 * s)));
         r.slider.setBounds(row);
     }
 }
