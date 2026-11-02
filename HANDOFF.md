@@ -1,5 +1,7 @@
 # HANDOFF — saxophone-vst v1 (implementing agent: start here)
 
+
+Reading order: `HANDOFF.md` → `ADDENDUM-PLAN-V3.9.md` → `plan/PLAN.md`. Later protocol amendments take precedence only where the gap ledger says so.
 **Purpose.** Build an alto-saxophone physical-model instrument plugin (VST3/AU/Standalone) whose UI draws a
 saxophone and highlights the keys of the note being played, with an Overblow control and a Harmonic
 (overblown-fingering) switch, and prove realism objectively and by human sign-off. You execute
