@@ -4,10 +4,17 @@ A physically modelled **alto saxophone** virtual instrument (VST3 / AU / Standal
 on-screen saxophone that **lights up the keys** for every note you play, and an **Overblow**
 control for overblown and harmonic (second-register) sounds.
 
-> **Status: planning.** The execution plan lives on the `gen-*` branch (see `HANDOFF.md`
-> there). No playable build exists yet.
+> **Status: partly implemented, not finished.** `main` holds only the licence files, two
+> blind-listening helper scripts and this file. The code is on the **`impl/saxophone-v1`**
+> branch (not merged). It has the synthesis core (reed model, resonator table, fingerings,
+> pitch, state) and a JUCE plugin with the drawn saxophone and key highlighting, along with
+> frozen C++ and Python tests. It stopped at step S-014, waiting for a human check of the
+> fingering chart and UI (gate G-004). The realism comparison against TinySOL recordings is
+> not done, and the blind listening test (gate G-003) is blocked until it is. No sound
+> quality claim has been verified. The plan is on `gen-20261001T211329Z-saxophone-vst-plan`
+> (see `HANDOFF.md` there).
 
-## What it will do
+## What it is meant to do
 
 - **Sound** – a real-time physical model of a single-reed saxophone: a mass–spring reed with
   mouthpiece-lay contact, a Bernoulli reed-channel flow, and a modal (sum-of-resonances)
@@ -25,16 +32,22 @@ control for overblown and harmonic (second-register) sounds.
 
 Range: concert D♭3–A5 (written B♭3–F♯6). MIDI input is concert pitch.
 
-## Building (planned)
+## Building
 
-C++20, CMake ≥ 3.22, JUCE 9.0.3 (fetched automatically). See `plan/ENVIRONMENT.md` on the
-planning branch for pinned versions and verified setup commands.
+C++20, CMake ≥ 3.22, JUCE 9.0.3 (fetched automatically). Build from the implementation
+branch, not `main`. See `plan/ENVIRONMENT.md` there for pinned versions and setup commands.
 
 ```bash
+git checkout impl/saxophone-v1
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ctest --test-dir build --output-on-failure
 ```
+
+## Scripts on `main`
+
+`scripts/make_blind_pairs.py` and `scripts/score_blind.py` build and score the blind listening test
+that gate G-003 will use.
 
 ## Licence
 
