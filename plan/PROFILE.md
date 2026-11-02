@@ -20,3 +20,7 @@ Mode flags: `software.deploys = false` (no release, no package publication, no r
 HANDOFF.md, plan/{PROFILE,PLAN,ASSUMPTIONS,DECISIONS,GATES,ENVIRONMENT,TRACEABILITY}.md,
 research/{QUESTIONS.md,claims.json,SOURCES.md,rounds/,spikes/}, tests/, tests/FROZEN_MANIFEST.sha256,
 premortem/{round-N.md,RISK_REGISTER.md}, .checkpoints/state.json.
+
+## Audio mode
+
+- `audio`: **true** — blind-listening evidence is required by the cross-repository audio-validation amendment.

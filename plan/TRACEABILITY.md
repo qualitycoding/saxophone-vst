@@ -67,3 +67,4 @@ Supporting (code verification of tools): T-007, T-027, T-030, T-031 → SC-3/4/5
 | T-029 | tests/plugin/test_plugin.cpp | integration | SC-1, SC-2, SC-8 |
 | T-030 | tests/python/test_resonator_tmm.py | unit | SC-3 |
 | T-031 | tests/python/test_resonator_tmm.py | integration | SC-3 |
+| LISTEN-G-003 | Blind listening gate: realism | `listening/G-003/round-001/result.json`, `GATE-G-003.LISTENING.md` | S-LISTEN, G-003 |

@@ -19,3 +19,12 @@ Risk-mitigation gates (Phase 4.4):
 - **Questions:** (1) Are all highlighted fingerings correct for your saxophone practice? (2) Any key drawn in the wrong place?
 - **Allowed responses:** `proceed` | `fix-layout: <keys>` (non-frozen KeyLayout geometry only) | `correct-chart: <notes>` (frozen fixture → `TEST_CHALLENGE.md`, protocol re-run) | `stop`.
 - **Branches:** proceed → S-015; fix-layout → amend `KeyLayout.cpp`, re-run T-018/T-029, re-issue G-004; correct-chart → halt per Test Challenge Rule; stop → halt.
+
+## G-003 — blind listening gate `realism`
+
+- **Trigger step:** S-LISTEN after applicable implementation/review prerequisites and before downstream packaging/retrospective work.
+- **Evidence bundle:** `GATE-G-003.LISTENING.md` and `listening/G-003/round-001/` containing the machine-readable `result.json`, ordered locked answers, exact score and one-sided binomial p-value, side-bias count, verbatim findings, reference/candidate provenance and checksums, pair-builder settings, render manifest, demo definitions, and `SHA256SUMS`.
+- **Frozen primary condition:** 12 matched onset pairs, initial seed `20261001`, common RMS −23 dBFS, 1.0 s clips, 10 ms fades, 44.1 kHz PCM-24 WAV, pass at ≤8/12 with no unresolved qualitative finding. Maximum three total rounds; rounds 2 and 3 use the initial seed +1000/+2000.
+- **Questions for the human:** ordered A/B reference choices for all 12 pairs, then the repository-specific demo/weak-spot questions in `plan/LISTENING-AMENDMENT.md`.
+- **Allowed responses:** `proceed`, `iterate: <notes>`, `proceed-with-rescope: <text>`, `stop`.
+- **Plan branches:** see `plan/LISTENING-AMENDMENT.md`; downstream resume is `S-017`. `stop` and `blocked` leave this gate open with the reason and next prerequisite recorded.

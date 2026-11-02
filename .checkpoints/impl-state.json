@@ -1,1 +1,27 @@
-{"step":"S-014","status":"awaiting-gate","gate":"G-004"}
+{
+  "step": "S-014",
+  "status": "awaiting-gate",
+  "gate": "G-004",
+  "mode_flags": {
+    "audio": true
+  },
+  "listening_gate": {
+    "gate_id": "G-003",
+    "test_type": "realism",
+    "round": 1,
+    "status": "blocked",
+    "seed": 20261001,
+    "result_path": "listening/G-003/round-001/result.json",
+    "blockers": [
+      "Native impl checkpoint is awaiting G-004 at S-014.",
+      "S-015 TinySOL/reference preparation and metrics are incomplete.",
+      "Twelve matched licensed TinySOL onset pairs and candidate renders are required."
+    ],
+    "next_step": "S-017",
+    "updated_at": "2026-11-02T14:15:19Z"
+  },
+  "open_items": [
+    "listening gate G-003: blocked — see listening/G-003/round-001/result.json"
+  ],
+  "updated_at": "2026-11-02T14:15:19Z"
+}

@@ -297,3 +297,29 @@ it after partial completion is safe; partial completion is detected by its "Done
 - On failure: default rule.
 - Gate: none (merging to `main` is the human's decision, D-019)
 - Relevant decisions/claims: all
+
+### S-LISTEN — blind listening execution for G-003
+- Tier: Opus
+- Profile: audio/software
+- Depends on: applicable implementation steps, S-REVIEW/S-ADVERSARIAL where required, and all named prerequisites
+- Inputs: `plan/LISTENING-AMENDMENT.md`, `listening/G-003/round-001/result.json`, frozen metrics, reference/candidate render manifests
+- Actions:
+  1. Verify all prerequisites are complete; if any is missing, leave this step `blocked` and update the native checkpoint/log.
+  2. Prepare owner-local `listening-work/G-003/round-001/` with matched `ref/`, `cand/`, concealed `blind/`, `events/`, `demos/`, and a listener-only bundle.
+  3. Build 12 onset pairs with `scripts/make_blind_pairs.py --window start --seconds 1.0 --rms-db -23.0 --fade 0.010 --fs 44100 --seed 20261001`; retain the pre-match level metrics and all hashes.
+  4. Render every demo from reproducible event/session inputs; demos are mandatory even if the numeric score passes.
+  5. Collect ordered A/B answers and verbatim qualitative findings before disclosing the key.
+  6. Score locally with `scripts/score_blind.py`; record the exact one-sided binomial p-value and side-bias count in `listening/G-003/round-001/result.json`.
+  7. Respond only with: `proceed`, `iterate: <notes>`, `proceed-with-rescope: <text>`, `stop`.
+- Outputs: `listening/G-003/round-001/result.json`, `answers.txt`, `score.txt`, `findings.md`, `metrics.md`, `provenance.md`, `render-manifest.json`, `SHA256SUMS`, and `GATE-G-003.LISTENING.md`.
+- Evidence produced: primary 12-pair onset score, reproducible demos, weak-spot answers, provenance/checksums, and this repository's next-step checkpoint update.
+- Done when: prerequisites pass, ≤8/12 on the primary set, no unresolved qualitative finding material to the gate purpose, evidence/result records are complete, and the response names `S-017`.
+- Checkpoint: keep the existing native checkpoint/run ID; add a listening pointer, round, status, candidate commit, and exact next action.
+- On failure or missing prerequisite: set `status = blocked`; do not manufacture a score or relax any frozen metric.
+- Gate: G-003
+- Relevant decisions/claims: D-021
+- Blockers recorded now:
+  - Native impl checkpoint is awaiting G-004 at S-014.
+  - S-015 TinySOL/reference preparation and metrics are incomplete.
+  - Twelve matched licensed TinySOL onset pairs and candidate renders are required.
+- Claim guard: No parallel G-003 implementation line may be created; this extends the existing S-016 gate only.

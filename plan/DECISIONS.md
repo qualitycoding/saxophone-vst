@@ -93,3 +93,7 @@ Authoritative signatures are the committed headers `core/include/sax/*.h`, `plug
 - **pip-audit reports a vulnerability** → bump only that package to the nearest fixed version, update lockfile, re-run all Python tests; log.
 - **Frozen test or fixture appears wrong** (e.g. human corrects the fingering chart at G-004) → halt, write `TEST_CHALLENGE.md`; protocol re-run (Rule 2E.4).
 - **Default rule:** choose the most reversible option that does not expand scope, log it in `DEVIATIONS.md` with rationale, and continue — **unless** it touches frozen tests, security, data integrity, a public interface, or research integrity, in which case halt and write `BLOCKED.md`.
+
+### D-021 — Blind listening amendment for G-003 — recorded 2026-11-02T14:15:19Z
+
+Decision: integrate the cross-repository blind-listening protocol into the existing branch and gate without creating a replacement implementation line. Freeze 12 onset pairs, initial seed `20261001`, RMS −23 dBFS, 1.0 s clips, 10 ms fades, 44.1 kHz PCM-24 WAV, pass at ≤8/12, maximum three rounds, and mandatory demos. Evidence is `realism`; No parallel G-003 implementation line may be created; this extends the existing S-016 gate only. The current state is `blocked` until the prerequisites in `plan/LISTENING-AMENDMENT.md` are complete.
