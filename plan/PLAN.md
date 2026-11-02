@@ -1,3 +1,5 @@
+# PLAN — protocol v3.9 (upgraded by ADDENDUM-PLAN-V3.9.md)
+
 <!-- STATUS: planning complete 2026-10-02 UTC. Branch: gen-20261001T211329Z-saxophone-vst-plan. Profile: software (deploys=false). Steps S-001..S-018; gates G-003, G-004 (G-001/G-002 N/A). Frozen tests: 27 files, tests/FROZEN_MANIFEST.sha256. Red verified except D-018 guard tests. Open risks: R-001 (realism ceiling, high), R-002, R-004, R-006, R-012 (medium). Execution-mode substitutions: single agent, in-context reviews (A-016). -->
 # Execution plan — saxophone-vst v1
 
@@ -297,3 +299,12 @@ it after partial completion is safe; partial completion is detected by its "Done
 - On failure: default rule.
 - Gate: none (merging to `main` is the human's decision, D-019)
 - Relevant decisions/claims: all
+
+
+## Amendment closing/review steps (v3.9)
+
+- **S-000** — Intake and environment probe (recorded at plan intake).
+- **S-REVIEW** — Traditional code review before packaging/release.
+- **S-ADVERSARIAL** — Adversarial review of security/correctness claims.
+- **S-RETRO** — Retrospective: review execution log, deviations and gate records.
+- **S-KNOW** — Knowledge/lessons: record classified lessons and knowledge items; G-003 controls publication to the Lessons and knowledge stores.
